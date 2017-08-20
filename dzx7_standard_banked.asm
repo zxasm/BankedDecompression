@@ -34,7 +34,7 @@ dzx7s_copy_byte_loop:
 	
 	; save flags and set carry to indicate LDI
 	push af
-	call CopyCopyByteLoop
+	call SubstituteLDI
        ;ldi                             ; copy literal byte
 	pop af 
 	;ld bc, 0
@@ -83,7 +83,7 @@ dzx7s_offset_end:
         pop     de                      ; DE = destination
         
         push af			; SAVE THE FLAGS !
-       call CopyBankToBank
+       call SubstituteLDIR
        ;ldir 
         pop af				; NOW GIMME THE FECKERS BACK !
         
@@ -99,7 +99,7 @@ dzx7s_next_bit:
         ret
 
 ; -----------------------------------------------------------------------------
-CopyBankToBank:
+SubstituteLDIR:
 	; we need to copy the data to the buffer first
 	; I am assuming it is never more than 128 bytes
 	; I could probably reduce the buffer size :)
@@ -145,7 +145,7 @@ CopyBankToBank:
 	ret
 ; -----------------------------------------------------------------------------
 
-CopyCopyByteLoop:
+SubstituteLDI:
 	; we should already be in the source bank...
 	push de
 	ld de, zxBufferSpace
