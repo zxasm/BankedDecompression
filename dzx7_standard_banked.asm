@@ -17,6 +17,10 @@ ZX7_DecompressBanked:
 	;
 	; save the source and destination bank details for later...
 	ld (zx7DestinationBank), bc
+	; put the source and destination bank numbers in b' c' :)
+	exx
+	ld bc, (zx7DestinationBank)
+	exx
 	; now change to the source bank otherwise it will decompress 
 	; data from the wrong place :p
 	ld a, (zx7SourceBank)
@@ -78,10 +82,8 @@ dzx7s_offset_end:
         pop     de                      ; DE = destination
         
         push af			; SAVE THE FLAGS !
-	
-	; dooooo itttttt !
-       ;call CopyBankToBank
-       ldir 
+       call CopyBankToBank
+       ;ldir 
         pop af				; NOW GIMME THE FECKERS BACK !
         
 dzx7s_exit:
