@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<cProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <pItems>
+    <projectItems>
+      <itemFilename>Z:\My OwnCloud\PERSONAL\Coding\Z80\BankSwitchedDecompression\constants.asm</itemFilename>
+      <itemType>z80</itemType>
+      <Reserved2>false</Reserved2>
+      <Reserved4>0</Reserved4>
+    </projectItems>
+    <projectItems>
+      <itemFilename>Z:\My OwnCloud\PERSONAL\Coding\Z80\BankSwitchedDecompression\main.asm</itemFilename>
+      <itemType>z80</itemType>
+      <Reserved2>false</Reserved2>
+      <Reserved4>0</Reserved4>
+    </projectItems>
+    <projectItems>
+      <itemFilename>Z:\My OwnCloud\PERSONAL\Coding\Z80\BankSwitchedDecompression\paging.asm</itemFilename>
+      <itemType>z80</itemType>
+      <Reserved2>false</Reserved2>
+      <Reserved4>0</Reserved4>
+    </projectItems>
+    <projectItems>
+      <itemFilename>Z:\My OwnCloud\PERSONAL\Coding\Z80\BankSwitchedDecompression\dzx7_standard_banked.asm</itemFilename>
+      <itemType>z80</itemType>
+      <Reserved2>false</Reserved2>
+      <Reserved4>0</Reserved4>
+    </projectItems>
+  </pItems>
+  <ProjectName>Z:\My OwnCloud\PERSONAL\Coding\Z80\BankSwitchedDecompression\BankSwitchedDecompression.zae</ProjectName>
+  <ProjectLoaded>true</ProjectLoaded>
+  <ProjectMainFileIndex>0</ProjectMainFileIndex>
+  <ProjectType>z80</ProjectType>
+</cProject>
