@@ -17,15 +17,16 @@ ZX7_DecompressBanked:
 	;
 	; save the source and destination bank details for later...
 	ld (zx7DestinationBank), bc
-	; put the source and destination bank numbers in b' c' :)
+	; put the source and destination bank numbers in d' e' :)
 	exx
-	ld bc, (zx7DestinationBank)
+	ld bc, pageport
+	ld de, (zx7DestinationBank)
 	exx
 	; now change to the source bank otherwise it will decompress 
 	; data from the wrong place :p
-	ld a, (zx7SourceBank)
-	ld b, a
-	call setrampage
+	;exx
+	;out (c), d
+	;exx
 	;
 dzx7_standard:
         ld      a, $80
@@ -121,9 +122,9 @@ CopyBankToBank:
 	ldir
 	
 	; change to destination bank!
-	;ld a, (zx7DestinationBank)
-	;ld b, a
-	;call setrampage
+	;exx
+	;out (c), e
+	;exx
 	
 	; restore the registers
 	pop bc
@@ -138,9 +139,9 @@ CopyBankToBank:
 
 	ld hl, (zx7SaveHL)
 	; switch back to the sourceBank otherwise ZX7 will get confused heh
-	;ld a, (zx7SourceBank)
-	;ld b, a
-	;call setrampage
+	;exx
+	;out (c), d
+	;exx
 	ret
 ; -----------------------------------------------------------------------------
 
@@ -151,13 +152,10 @@ CopyCopyByteLoop:
 	ldi
 	pop de
 	
-	;push bc
-	; change to destination bank!
-	;ld a, (zx7DestinationBank)
-	;ld b, a
-	;call setrampage
-	; restore the registers
-	;pop bc
+	; switch to destinationBank
+	;exx
+	;out (c), e
+	;exx
 
 	; annnnd back again...
 	push hl
@@ -167,13 +165,10 @@ CopyCopyByteLoop:
 	ldi
 	pop hl
 	
-
-	;push bc
 	; switch back to the sourceBank otherwise ZX7 will get confused heh
-	;ld a, (zx7SourceBank)
-	;ld b, a
-	;call setrampage
-	;pop bc
+	;exx
+	;out (c), d
+	;exx
 	
 	ret
 

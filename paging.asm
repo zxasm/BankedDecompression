@@ -11,7 +11,7 @@ setrampage:
 	and %11111000
 	or b
 	ld bc, pageport
-	ld (pagevalue), a
+	;ld (pagevalue), a
 	out (c), a
 	;ei
 	ret
