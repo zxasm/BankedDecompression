@@ -40,7 +40,8 @@ dzx7s_copy_byte_loop:
 	;ld bc, 0
 dzx7s_main_loop:
         call    dzx7s_next_bit
-        jr      nc, dzx7s_copy_byte_loop ; next bit indicates either literal or sequence
+        jr      nc, dzx7s_copy_byte_loop ; next bit indicates either
+											;literal or sequence
 
 ; determine number of bits used for length (Elias gamma coding)
         push    de
