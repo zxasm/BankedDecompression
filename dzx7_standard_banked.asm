@@ -101,6 +101,7 @@ dzx7s_next_bit:
 
 ; -----------------------------------------------------------------------------
 SubstituteLDIR:
+	; this is the FAST way using LDIR style
 	; we need to copy the data to the buffer first
 	; I am assuming it is never more than 128 bytes
 	; I could probably reduce the buffer size :)
@@ -144,6 +145,13 @@ SubstituteLDIR:
 	;out (c), d
 	;exx
 	ret
+; -----------------------------------------------------------------------------
+
+SubstituteLDIRAlternative:
+	; this is the SLOW way using SubstituteLDI
+	
+	ret
+
 ; -----------------------------------------------------------------------------
 
 SubstituteLDI:
